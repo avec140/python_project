@@ -1,7 +1,21 @@
 # 파이썬을 잘 다루기 위한 나만의 프로그램 만들기
 # chapter 1. 사칙연산 계산기 만들기
 
-number = 0
+#전역변수 선언
+number=0; num1=0; num2=0; result = 0
+
+def add(num1, num2):
+     return (num1 + num2)
+
+def sub(num1, num2):
+     return (num1 - num2)
+
+def mul(num1, num2):
+     return (num1 * num2)
+
+def div(num1, num2):
+     return (num1 // num2)
+
 while True:
      print("--------------------------")
      print("1. 덧셈")
@@ -12,38 +26,18 @@ while True:
      print("--------------------------")
 
      intro = int(input())
+     num1 = int(input("첫번째 숫자를 입력하세요 : "))
+     num2 = int(input("두번째 숫자를 입력하세요 : "))
 
      if (intro == 1):
-          print("첫번째 더하기할 숫자를 입력하세요")
-          num1 = int(input())
-          print("두번쨰로 더할 숫자를 입력하세요")
-          num2 = int(input())
-          result = num1 + num2
-          print(f"더한 결과: {num1} + {num2} = {result}")
-
+          result = add(num1, num2)
      elif (intro == 2):
-          print("첫번째 뺄 숫자를 입력하세요")
-          num1 = int(input())
-          print("두번쨰로 뺄 숫자를 입력하세요")
-          num2 = int(input())
-          result = num1 - num2
-          print(f"더한 결과: {num1} - {num2} = {result}")
-
+          result = sub(num1, num2)
      elif (intro == 3):
-          print("첫번째 곱할 숫자를 입력하세요")
-          num1 = int(input())
-          print("두번쨰로 곱할 숫자를 입력하세요")
-          num2 = int(input())
-          result = num1 * num2
-          print(f"더한 결과: {num1} * {num2} = {result}")
-
+          result = mul(num1, num2)
      elif (intro == 4):
-          print("첫번째 나눌 숫자를 입력하세요")
-          num1 = int(input())
-          print("두번쨰로 나눌 숫자를 입력하세요")
-          num2 = int(input())
-          result = num1 // num2
-          print(f"더한 결과: {num1} / {num2} = {result}")
-     
+          result = div(num1, num2)    
      elif (intro == 5):
           break;     
+
+     print("결과 : ", result)
